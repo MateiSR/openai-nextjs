@@ -1,35 +1,32 @@
-import { Component } from "react";
+import { useState } from "react";
 
-export default class ImageRenderer extends Component {
+export default function ImageRenderer(props) {
+    /* set state for large image */
+    const [largeImage, setLargeImage] = useState('');
 
     /* show large picture overlay */
-    showLargePicture = (item) => {
-        return () => {
-            /*if already opened one, close previous */
-            const oldLargeImage = document.querySelector(".large-image-container");
-            if (oldLargeImage) {
-            oldLargeImage.remove();
-            }
-            const largeImage = document.createElement("div");
-            largeImage.classList.add("large-image-container");
-            largeImage.innerHTML = `<img src=${item} alt="large image" />`;
-            document.body.appendChild(largeImage);
-            largeImage.addEventListener("click", () => {
-            largeImage.remove();
-            });
-        };
+    const showLargePicture = (item) => {
+        setLargeImage(item);
     }
 
-    render() {
-        return (
+    /* close large picture overlay */
+    const closeLargePicture = () => {
+        setLargeImage('');
+    }
+
+    return (
         <div className="container">
             <h1>Image Results:</h1>
             <div className="image-container-grid">
-            {this.props.answer.map((item) => (
-                <img className="image" src={item} onClick={this.showLargePicture(item)} />
-            ))}
+                {props.answer.map((item) => (
+                    <img className="image" src={item} onClick={() => showLargePicture(item)} key={item} />
+                ))}
             </div>
+            {largeImage && (
+                <div className="large-image-container" onClick={closeLargePicture}>
+                    <img src={largeImage} alt="large image" />
+                </div>
+            )}
         </div>
-        );
-    }
-    }
+    );
+}

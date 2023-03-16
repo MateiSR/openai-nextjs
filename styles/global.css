@@ -1,43 +1,53 @@
+/*
+  Set padding and margin to 0 for body and html
+*/
 body,
 html {
   padding: 0;
   margin: 0;
 }
 
+/*
+  Set font, line-height, and color for body
+*/
 body {
   font-family: sans-serif;
   line-height: 1.65;
   color: #333;
 }
 
+/*
+  Set white space, margin, and font size for answer area
+*/
 .answer-area {
   white-space: pre-wrap;
   margin-top: 1rem;
   font-size: 1.15rem;
 }
 
+/*
+  Set display to flex and margin bottom for our form
+*/
 .our-form {
   display: flex;
   margin-bottom: 1rem;
 }
 
-.prompt-field {
-  flex: 1;
-  color: #333;
-  padding: 5px;
-  font-size: 1rem;
-  margin-right: 10px;
-}
-
+/*
+  Set flex, color, padding, font size, and margin right for prompt field and choice field
+*/
+.prompt-field,
 .choice-field {
   flex: 1;
   color: #333;
   padding: 5px;
   font-size: 1rem;
   margin-right: 10px;
-
 }
 
+/*
+  Set position, width, height, background color, margin, and padding for large image container
+*/
 .large-image-container {
   position: absolute;
   top: 0;
@@ -49,6 +59,9 @@ body {
   padding: 10px 20px;
 }
 
+/*
+  Set justify content, align items, max width, height, margin, and display for large image container img
+*/
 .large-image-container img {
   justify-content: center;
   align-items: center;
@@ -58,6 +71,9 @@ body {
   display: block;
 }
 
+/*
+  Set display, grid template columns, grid gap, margin, and padding for image container grid
+*/
 .image-container-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
@@ -66,6 +82,9 @@ body {
   padding: 10px 20px;
 }
 
+/*
+  Set padding, font size, color, border, border radius, and background color for submit button
+*/
 .submit-button {
   padding: 10px;
   font-size: 1rem;
@@ -75,6 +94,9 @@ body {
   background-color: rgb(46, 98, 255);
 }
 
+/*
+  Set webkit animation duration, iteration count, name, and timing function, and moz animation duration, iteration count, name, and timing function, and animation duration, iteration count, name, and timing function for loading spinner
+*/
 @-webkit-keyframes rotate-forever {
   0% {
     -webkit-transform: rotate(0deg);
@@ -131,7 +153,7 @@ body {
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   -webkit-animation-name: rotate-forever;
-  -moz-animation-name: rotate-forever;
+  -moz-animation-name:rotate-forever;
   animation-name: rotate-forever;
   -webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
@@ -144,17 +166,26 @@ body {
   display: inline-block;
 }
 
+/*
+  Set max width, margin, and padding for container
+*/
 .container {
   max-width: 700px;
   margin: 0 auto;
   padding: 10px 20px;
 }
 
+/*
+  Set max width and height for container img
+*/
 .container img {
   max-width: 100%;
   height: auto;
 }
 
+/*
+  Set border top, max width, margin, padding, and text align for footer
+*/
 .footer {
   border-top: 1px dotted rgb(192, 192, 192);
   max-width: 700px;
@@ -163,6 +194,9 @@ body {
   text-align: center;
 }
 
+/*
+  Set color and margin for footer a
+*/
 .footer a {
   color: #999;
   margin: 0 10px;
