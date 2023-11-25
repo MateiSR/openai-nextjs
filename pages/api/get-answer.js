@@ -10,7 +10,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 // Export the handler function
-export async function handler(req, res) {
+export default async function handler(req, res) {
   // Check if prompt exists and is a string
   if (!req.body.prompt || typeof req.body.prompt !== "string") {
     return res.status(400).json({ error: "Invalid prompt provided." });
